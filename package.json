@@ -1,0 +1,28 @@
+{
+  "name": "akamai-edgeworker-example",
+  "version": "1.0.0",
+  "description": "Example Akamai Edge Worker configuration for Spec",
+  "main": "main.js",
+  "scripts": {
+    "build": "rollup -c && npm run generate-bundle-json && npm run archive-bundle",
+    "generate-bundle-json": "echo '{\"edgeworker-version\":\"'$npm_package_version'\",\"description\":\"'$npm_package_description'\"}' > dist/bundle.json",
+    "archive-bundle": "cd dist && tar -czvf edge_worker_bundle.tgz *",
+    "update-sandbox-worker": "npm run build && akamai sandbox update-edgeworker \"<insert edge-worker ID>\" dist/edge_worker_bundle.tgz",
+    "edgeworker-auth": "akamai edgeworkers auth \"<insert property hostname>\""
+  },
+  "author": "Jay Cunningham <jay@spec-trust.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/akamai-edgeworkers": "^1.1.12",
+    "rollup": "^4.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@specprotected/spec-proxy-akamai-worker": "0.1.0"
+  }
+}
