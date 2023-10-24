@@ -2,6 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
+import terser from "@rollup/plugin-terser";
 
 export default {
   /* Specify main file for EdgeWorker */
@@ -29,5 +30,8 @@ export default {
 
     /* Package json data as an ES6 module */
     json(),
+
+    /* Minify it so we can reduce the size */
+    terser(),
   ],
 };

@@ -16,6 +16,7 @@
     "@rollup/plugin-commonjs": "^25.0.5",
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/akamai-edgeworkers": "^1.1.12",
     "rollup": "^4.0.2",
@@ -23,6 +24,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@specprotected/spec-proxy-akamai-worker": "0.1.0"
+    "@specprotected/spec-proxy-akamai-worker": "0.1.2"
   }
 }

@@ -10,7 +10,8 @@
     "strict": true,
     "esModuleInterop": true,
     "sourceMap": false,
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "removeComments": true
   },
   "include": ["**/*.ts"]
 }
